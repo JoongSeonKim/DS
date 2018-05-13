@@ -1,0 +1,47 @@
+//
+//  BSTdelMain.c
+//  PracticeC
+//
+//  Created by KimJoong Seon on 2018. 5. 12..
+//  Copyright © 2018년 KimJoong Seon. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "BinarySearchTree2.h"
+
+int main(void)
+{
+    BTreeNode *bstRoot;
+    BTreeNode *sNode;
+    
+    BSTMakeAndInit(&bstRoot);
+    
+    BSTInsert(&bstRoot, 5); BSTInsert(&bstRoot, 8);
+    BSTInsert(&bstRoot, 1); BSTInsert(&bstRoot, 6);
+    BSTInsert(&bstRoot, 4); BSTInsert(&bstRoot, 9);
+    BSTInsert(&bstRoot, 3); BSTInsert(&bstRoot, 2);
+    BSTInsert(&bstRoot, 7);
+    
+    BSTShowAll(bstRoot); printf("\n");
+    sNode = BSTRemove(&bstRoot, 3);
+    free(sNode);
+
+    BSTShowAll(bstRoot); printf("\n");
+    sNode = BSTRemove(&bstRoot, 8);
+    free(sNode);
+
+    BSTShowAll(bstRoot); printf("\n");
+    sNode = BSTRemove(&bstRoot, 1);
+    free(sNode);
+
+    BSTShowAll(bstRoot); printf("\n");
+    sNode = BSTRemove(&bstRoot, 5);
+    free(sNode);
+    
+    BSTShowAll(bstRoot); printf("\n");
+    
+    return 0;
+
+}
